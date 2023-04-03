@@ -1,0 +1,54 @@
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Open Sans";
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("assets/bg-live.jpg");
+  background-size: cover;
+  border-radius: 10px;
+
+  width: 50vw;
+  height: 450px;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+}
+
+h2 {
+  color: #ffffff;
+  text-align: center;
+  font-weight: 300;
+}
+
+@media (max-width: 870px) {
+  .card {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .card {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 320px) {
+  .card {
+    width: 90vw;
+    min-width: 200px;
+  }
+}
