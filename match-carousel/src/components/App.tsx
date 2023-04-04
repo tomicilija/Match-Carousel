@@ -10,12 +10,7 @@ const App = () => {
         <div className="tab" onClick={() => setSwitchTabs(!switchTabs)}>
           <p>Switch Tabs</p>
         </div>
-        <section style={{ display: switchTabs ? 'block' : 'none' }}>
-          <MatchCarousel max={15} />
-        </section>
-        <section style={{ display: !switchTabs ? 'block' : 'none' }}>
-          <MatchCarousel sportId={2} />
-        </section>
+        <MatchCarousel max={15} sportId={2} />
       </div>
     </>
   );
