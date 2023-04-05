@@ -4,7 +4,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 250px !important;
 }
 
 /* Typography */
@@ -14,17 +13,17 @@ h3,
 p {
   color: white;
   text-align: center;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   font-weight: 100;
   margin: 0;
   line-height: 1.5em;
 }
 h1 {
-  font-size: 100px;
+  font-size: 80px;
   line-height: 1em;
 }
 h2 {
-  font-size: 40px;
+  font-size: 35px;
 }
 h3 {
   font-size: 25px;
@@ -39,8 +38,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("assets/bg-live.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   background-size: cover;
   background-position: center center;
   border-radius: 10px;
@@ -66,10 +64,10 @@ p {
   max-width: 200px;
 }
 .card-team:nth-child(1) {
-  margin-right: 30px;
+  margin-right: 100px;
 }
 .card-team:nth-child(3) {
-  margin-left: 30px;
+  margin-left: 100px;
 }
 .team-flag {
   width: 150px;
@@ -91,13 +89,13 @@ p {
 /* Responsive Design */
 @media (max-width: 870px) {
   h1 {
-    font-size: 70px;
+    font-size: 40px;
   }
   h2 {
-    font-size: 25px;
+    font-size: 20px;
   }
   h3 {
-    font-size: 20px;
+    font-size: 16px;
   }
   p {
     font-size: 14px;
@@ -111,6 +109,12 @@ p {
   .card-team {
     max-width: 150px;
   }
+  .card-team:nth-child(1) {
+    margin-right: 50px;
+  }
+  .card-team:nth-child(3) {
+    margin-left: 50px;
+  }
   .team-flag {
     width: 100px;
     height: 75px;
@@ -122,13 +126,13 @@ p {
 }
 @media (max-width: 450px) {
   h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
   h2 {
-    font-size: 18px;
+    font-size: 14px;
   }
   h3 {
-    font-size: 14px;
+    font-size: 12px;
   }
   p {
     font-size: 10px;
@@ -149,13 +153,13 @@ p {
 
 @media (max-width: 320px) {
   h1 {
-    font-size: 30px;
+    font-size: 20px;
   }
   h2 {
-    font-size: 14px;
+    font-size: 12px;
   }
   h3 {
-    font-size: 12px;
+    font-size: 10px;
   }
   p {
     font-size: 8px;
@@ -165,6 +169,12 @@ p {
   }
   .card-team {
     max-width: 75px;
+  }
+  .card-team:nth-child(1) {
+    margin-right: 20px;
+  }
+  .card-team:nth-child(3) {
+    margin-left: 20px;
   }
   .team-flag {
     width: 45px;
