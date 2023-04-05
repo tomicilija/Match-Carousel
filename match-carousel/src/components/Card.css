@@ -24,6 +24,7 @@ h1 {
 }
 h2 {
   font-size: 35px;
+  max-height: 100px;
 }
 h3 {
   font-size: 25px;
@@ -36,7 +37,7 @@ p {
 .card {
   position: relative;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   background-size: cover;
@@ -83,7 +84,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 200px;
+  max-width: 250px;
 }
 .card-team:nth-child(1) {
   margin-right: 100px;
@@ -110,15 +111,15 @@ p {
 }
 
 .live-status {
-    background-color: orange;
+  background-color: orange;
 }
 
 .ended-status {
-    background-color: green;
+  background-color: green;
 }
 
 .not-started-status {
-    background-color: gray;
+  background-color: gray;
 }
 
 /* Responsive Design */

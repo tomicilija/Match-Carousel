@@ -4,7 +4,6 @@ import axios from 'axios';
 import './MatchCarousel.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 interface CarouselProps {
   max?: number | 10;
@@ -69,6 +68,23 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
   const [sportData, setSportData] = useState<SportData[]>();
   const matchCards: MatchCard[] = [];
 
+  sportData?.forEach((sport) =>
+    sport.realcategories.forEach((league) =>
+      league.tournaments.forEach((tournament) =>
+        tournament.matches.forEach((match) => {
+          if (matchCards.length < (max || 10)) {
+            matchCards.push({
+              matchData: match,
+              tournamentName: tournament.name,
+              tournamentSeason: tournament.seasontypename,
+              leagueName: league.name,
+            });
+          }
+        }),
+      ),
+    ),
+  );
+  
   const carouselSettings = { 
     dots: true,
     infinite: true,
@@ -92,7 +108,6 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
         console.error(err);
       });
   };
-
   useEffect(() => {
     fetchMatches().then((sportsData) => {
       if (sportId) {
@@ -104,40 +119,19 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
     });
   }, []);
 
-  sportData?.forEach((sport) =>
-    sport.realcategories.forEach((league) =>
-      league.tournaments.forEach((tournament) =>
-        tournament.matches.forEach((match) => {
-          if (matchCards.length < (max || 10)) {
-            matchCards.push({
-              matchData: match,
-              tournamentName: tournament.name,
-              tournamentSeason: tournament.seasontypename,
-              leagueName: league.name,
-            });
-          }
-        }),
-      ),
-    ),
-  );
-
   return (
     <>
       <div className="carousel">
         <Slider {...carouselSettings}>
-          {matchCards.map((matchCard) => (
-            // eslint-disable-next-line react/jsx-key
+          {matchCards.map((matchCard, idx) => (
+          <div key={idx}>
             <Card {...matchCard} />
+          </div>
           ))}
         </Slider>
       </div>
     </>
   );
-};
-
-MatchCarousel.defaultProps = {
-  max: 10,
-  sportId: undefined,
 };
 
 export default MatchCarousel;

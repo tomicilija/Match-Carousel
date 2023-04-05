@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Card.css';
+
 interface MatchProps {
   matchData: {
     _dt: {
@@ -61,7 +62,7 @@ const Card: React.FC<MatchProps> = ({
             <img
               className="team-flag"
               src={`http://ls.betradar.com/ls/crest/big/${matchData.teams.home.uid}.png`}
-              alt={`${matchData.teams.home.name} Crest logo` }
+              alt={`${matchData.teams.home.name} Crest logo`}
             />
             <h2>{matchData.teams.home.name}</h2>
           </div>
@@ -83,7 +84,7 @@ const Card: React.FC<MatchProps> = ({
             <img
               className="team-flag"
               src={`http://ls.betradar.com/ls/crest/big/${matchData.teams.away.uid}.png`}
-              alt={`${matchData.teams.away.name} Crest logo` }
+              alt={`${matchData.teams.away.name} Crest logo`}
             />
             <h2>{matchData.teams.away.name}</h2>
           </div>

@@ -11,26 +11,6 @@
   justify-content: center;
 }
 
-.carousel .slick-dots {
-  display: flex !important;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.carousel .slick-dots li {
-  margin: 0 5px;
-}
-
-.carousel .slick-dots li button:before {
-  font-size: 10px;
-  opacity: 0.5;
-  color: gray;
-}
-
-.carousel .slick-dots li.slick-active button:before {
-  opacity: 1;
-}
-
 .carousel .slick-slide div {
   outline: none;
 }
@@ -39,8 +19,117 @@
   width: auto;
 }
 
-@media (max-width: 220px) {
+/* Dots */
+
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+.slick-dots
+{
+    display: flex !important;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 30px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: 1;
+    color: black;
+}
+
+
+@media (max-width: 870px) {
+  .slick-dots li
+  {
+      width: 5px;
+      height: 5px;
+      margin: 0 5px;
+  }
+}
+
+@media (max-width: 450px) {
+  .slick-dots li
+  {
+      width: 3px;
+      height: 3px;
+      margin: 0 5px;
+  }
+}
+
+@media (max-width: 230px) {
   .carousel .slick-list {
     max-width: 210px !important;
+  }
+  .slick-dots li
+  {
+      width: 1px;
+      height: 1px;
+      margin: 0 5px;
   }
 }

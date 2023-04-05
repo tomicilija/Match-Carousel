@@ -6,7 +6,7 @@ const App = () => {
   const [switchTabs, setSwitchTabs] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log(switchTabs);
+    //console.log(switchTabs);
   }, [switchTabs]);
   return (
     <>
