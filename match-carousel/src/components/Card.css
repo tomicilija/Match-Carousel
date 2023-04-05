@@ -36,7 +36,7 @@ p {
 .card {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   background-size: cover;
@@ -45,6 +45,28 @@ p {
   margin: 10px;
   width: 800px;
 }
+
+.live-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../assets/bg-live.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.ended-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../assets/bg-postmatch.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.not-started-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../assets/bg-prematch.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
 .card-header {
   margin: 10px;
 }
@@ -84,6 +106,18 @@ p {
   margin-bottom: 30px;
   background-color: orange;
   border-radius: 5px;
+}
+
+.live-status {
+    background-color: orange;
+}
+
+.ended-status {
+    background-color: green;
+}
+
+.not-started-status {
+    background-color: gray;
 }
 
 /* Responsive Design */
