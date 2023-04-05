@@ -123,7 +123,6 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
 
   return (
     <>
-      {console.log(matchCards)}
       <div className="carousel">
         <Slider {...carouselSettings}>
           {matchCards.map((matchCard) => (

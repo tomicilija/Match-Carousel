@@ -39,19 +39,6 @@ const Card: React.FC<MatchProps> = ({
   tournamentSeason,
   leagueName,
 }) => {
-  const condition = false;
-
-  /* 
-  if (matchData.status._id === 0) {
-    setMatchStatus('not-started');
-  }
-  if (matchData.status._id === 100) {
-    setMatchStatus('ended');
-  }
-  if (matchData.status._id > 0 && matchData.status._id < 100) {
-    setMatchStatus('live');
-  }
- */
   return (
     <div>
       <div
@@ -74,6 +61,7 @@ const Card: React.FC<MatchProps> = ({
             <img
               className="team-flag"
               src={`http://ls.betradar.com/ls/crest/big/${matchData.teams.home.uid}.png`}
+              alt={`${matchData.teams.home.name} Crest logo` }
             />
             <h2>{matchData.teams.home.name}</h2>
           </div>
@@ -94,7 +82,8 @@ const Card: React.FC<MatchProps> = ({
           <div className="card-team">
             <img
               className="team-flag"
-              src={`http://ls.betradar.com/ls/crest/big/${matchData.teams.home.uid}.png`}
+              src={`http://ls.betradar.com/ls/crest/big/${matchData.teams.away.uid}.png`}
+              alt={`${matchData.teams.away.name} Crest logo` }
             />
             <h2>{matchData.teams.away.name}</h2>
           </div>

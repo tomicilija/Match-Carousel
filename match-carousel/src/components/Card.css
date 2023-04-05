@@ -94,6 +94,7 @@ p {
 .team-flag {
   width: 150px;
   height: 100px;
+  color: white;
 }
 .card-result {
   position: absolute;
