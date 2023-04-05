@@ -15,9 +15,10 @@ const App = () => {
           <p>Switch Tabs</p>
         </div>
        <section style={{ display: switchTabs ? 'block' : 'none' }}>
-          <MatchCarousel max={15} />
+          <MatchCarousel max={10} />
         </section>
         <section style={{ display: !switchTabs ? 'block' : 'none' }}>
+          <MatchCarousel sportId={1} />
           <MatchCarousel sportId={2} />
         </section>
       </div>

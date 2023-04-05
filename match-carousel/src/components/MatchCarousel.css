@@ -21,10 +21,6 @@
 
 /* Dots */
 
-.slick-dotted.slick-slider
-{
-    margin-bottom: 30px;
-}
 .slick-dots
 {
     display: flex !important;
@@ -33,6 +29,7 @@
     width: 100%;
     padding: 0;
     text-align: center;
+    margin-bottom: 30px;
 }
 .slick-dots li
 {
