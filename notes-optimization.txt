@@ -1,0 +1,16 @@
+Consider a scenario where more that one plugin instance is rendered on a single web site and
+describe how would you optimize or implement the client side data layer. Main points are
+reducing number of XHR requests and optimizing match carousel initialization speed.
+
+
+To reduce the number of XHR requests we could first reduce data layers, so instead of creating a separate data layer object for each plugin instance,
+    we can use single or just a few instances.
+To reduce the number of XHR requests furthermore, we could implement cashing.
+
+
+To optimize match carousel initialization speed, we could optimize data layer size by using only necessary data. We could also implement lazy loading.
+Using Frameworks like Next. js or Svelte instead of CRA would also improve initialization speed, because Next. js offers server-side rendering and prefatching,
+    and Svelte has highly optimized JavaScript code, so it has smaller bundle sizes.
+    Besides faster initialization, Next. js, and Svelte can also improve SEO. Because of server-side rendering, it provides a fully rendered page right from the start
+    and search engines can read page content, unlike CRA, which loads empty html pages and then renders content.
+
