@@ -3,7 +3,7 @@ import './App.css';
 import MatchCarousel from './MatchCarousel';
 
 const App = () => {
-  const [switchTabs, setSwitchTabs] = useState<boolean>(false);
+  const [switchTabs, setSwitchTabs] = useState<boolean>(true);
 
   useEffect(() => {
     //console.log(switchTabs);
