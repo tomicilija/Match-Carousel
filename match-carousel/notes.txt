@@ -10,7 +10,7 @@
  - src/components/MatchCarousel.css - It styles a carousel with the help of the Slick library. It adjusts the carousel for our specific needs.
  - src/components/Card.tsx - This component renders a card with data of a single match, including the team names, logos, scores, and match status. It receives the match data,
                             tournament and league data, and uses conditional rendering to display different components depending on the match status.
-                        ISSUE: there is NO image on provided URL (http://ls.betradar.com/ls/crest/big/<team_id>.png)
+                        ISSUE(FIXED): there is NO image on provided URL (http://ls.betradar.com/ls/crest/big/<team_id>.png) // new url: https://img.sportradar.com/ls/crest/big/<team_id>.png
  - src/components/Card.css - It styles each card. It aligns items, sets background images based on the match status (not started, live, ended) and defines responsive 
                             styles for the card, adjusting font sizes, widths, and margins at different screen sizes using media queries.
  
