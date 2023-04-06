@@ -5,12 +5,27 @@
 
  - src/components/App.tsx - It defines the main component, which uses useState hook to switch between two tabs that display different MatchCarousel components
  - src/components/App.css - IT defines styles for app component and position of 'button' and tabs for carousel
- - src/components/MatchCarousel.tsx - Component that receives two optional props max and sportId, then fetches data using an axios request to a sportradar API, then iterates over the data to create an array of MatchCard objects. Array is then mapped to create a slider using the react-slick library.
+ - src/components/MatchCarousel.tsx - Component that receives two optional props max and sportId, then fetches data using an axios request to a sportradar API,
+                                    then iterates over the data to create an array of MatchCard objects. Array is then mapped to create a slider using the react-slick library.
  - src/components/MatchCarousel.css - It styles a carousel with the help of the Slick library. It adjusts the carousel for our specific needs.
- - src/components/Card.tsx - This component renders a card with data of a single match, including the team names, logos, scores, and match status. It receives the match data, tournament and league data, and uses conditional rendering to display different components depending on the match status.
-                            ISSUE: there is NO image on provided URL (http://ls.betradar.com/ls/crest/big/<team_id>.png)
- - src/components/Card.css - It styles each card. It aligns items, sets background images based on the match status (not started, live, ended) and defines responsive styles for the card, adjusting font sizes, widths, and margins at different screen sizes using media queries.
+ - src/components/Card.tsx - This component renders a card with data of a single match, including the team names, logos, scores, and match status. It receives the match data,
+                            tournament and league data, and uses conditional rendering to display different components depending on the match status.
+                        ISSUE: there is NO image on provided URL (http://ls.betradar.com/ls/crest/big/<team_id>.png)
+ - src/components/Card.css - It styles each card. It aligns items, sets background images based on the match status (not started, live, ended) and defines responsive 
+                            styles for the card, adjusting font sizes, widths, and margins at different screen sizes using media queries.
  
  
- - package.json - his project uses typescript, with axios library to fetch data from API and react-slick library to display matches in carousel. It also utilizes lint and prettier, for clean codeing.
- 
+ - package.json - his project uses typescript, with axios library to fetch data from API and react-slick library to display matches in carousel. 
+                It also utilizes lint and prettier,for clean codeing.
+
+
+If there were none of the formatting requirements, I would have separated the code into different folders. Each component would be in its designated folder, 
+along with the styling file. I would have interfaces in different files, I would also have a separate file for API calls.
+
+Main challenges:
+ - slick-carousel's styles were bugging out, because of the "position: absolute" in slick-dots's slick-theme.css. Because of that, I couldn't get the cards displayed, so I had to style them. 
+
+Known issues: 
+ - The carousel is limited to displaying a certain amount of cards, the limiting factor being navigational dots, and their width, when there are a lot of them together.
+
+
