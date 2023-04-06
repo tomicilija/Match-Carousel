@@ -1,0 +1,16 @@
+ - src/index.tsx - It sets up the React environment (ReactDOM), creates a root element, renders the App component using TypeScript.
+ - src/index.css - Defines some default styling, like margins and font
+
+ - src/assets/ - Folder with 3 background images, each for different match status (not started/live/ended)
+
+ - src/components/App.tsx - It defines the main component, which uses useState hook to switch between two tabs that display different MatchCarousel components
+ - src/components/App.css - IT defines styles for app component and position of 'button' and tabs for carousel
+ - src/components/MatchCarousel.tsx - Component that receives two optional props max and sportId, then fetches data using an axios request to a sportradar API, then iterates over the data to create an array of MatchCard objects. Array is then mapped to create a slider using the react-slick library.
+ - src/components/MatchCarousel.css - It styles a carousel with the help of the Slick library. It adjusts the carousel for our specific needs.
+ - src/components/Card.tsx - This component renders a card with data of a single match, including the team names, logos, scores, and match status. It receives the match data, tournament and league data, and uses conditional rendering to display different components depending on the match status.
+                            ISSUE: there is NO image on provided URL (http://ls.betradar.com/ls/crest/big/<team_id>.png)
+ - src/components/Card.css - It styles each card. It aligns items, sets background images based on the match status (not started, live, ended) and defines responsive styles for the card, adjusting font sizes, widths, and margins at different screen sizes using media queries.
+ 
+ 
+ - package.json - his project uses typescript, with axios library to fetch data from API and react-slick library to display matches in carousel. It also utilizes lint and prettier, for clean codeing.
+ 
