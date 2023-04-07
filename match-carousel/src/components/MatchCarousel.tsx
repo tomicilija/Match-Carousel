@@ -58,6 +58,7 @@ interface SportData {
 }
 
 const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
+  type LazyLoadTypes = 'ondemand' | 'progressive';
   const [sportData, setSportData] = useState<SportData[]>();
   let matchCounter = 0;
 
@@ -71,6 +72,7 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
     autoplaySpeed: 3000,
     arrows: false,
     focusOnSelect: true,
+    lazyLoad: 'ondemand' as LazyLoadTypes,
   };
 
   const fetchMatches = (): Promise<SportData[]> => {
@@ -85,7 +87,7 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
         console.error(err);
       });
   };
-  
+
   useEffect(() => {
     fetchMatches().then((sportsData) => {
       if (sportId) {
