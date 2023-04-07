@@ -70,6 +70,7 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
+    focusOnSelect: true,
   };
 
   const fetchMatches = (): Promise<SportData[]> => {
@@ -84,6 +85,7 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
         console.error(err);
       });
   };
+  
   useEffect(() => {
     fetchMatches().then((sportsData) => {
       if (sportId) {
@@ -94,7 +96,6 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
       }
     });
   }, []);
-
 
   return (
     <>
