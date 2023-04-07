@@ -57,35 +57,11 @@ interface SportData {
   realcategories: League[];
 }
 
-interface MatchCard {
-  matchData: any;
-  tournamentName: string;
-  tournamentSeason: string;
-  leagueName: string;
-}
-
 const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
   const [sportData, setSportData] = useState<SportData[]>();
-  const matchCards: MatchCard[] = [];
+  let matchCounter = 0;
 
-  sportData?.forEach((sport) =>
-    sport.realcategories.forEach((league) =>
-      league.tournaments.forEach((tournament) =>
-        tournament.matches.forEach((match) => {
-          if (matchCards.length < (max || 10)) {
-            matchCards.push({
-              matchData: match,
-              tournamentName: tournament.name,
-              tournamentSeason: tournament.seasontypename,
-              leagueName: league.name,
-            });
-          }
-        }),
-      ),
-    ),
-  );
-  
-  const carouselSettings = { 
+  const carouselSettings = {
     dots: true,
     infinite: true,
     speed: 300,
@@ -93,7 +69,7 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false
+    arrows: false,
   };
 
   const fetchMatches = (): Promise<SportData[]> => {
@@ -119,15 +95,33 @@ const MatchCarousel: FC<CarouselProps> = ({ max, sportId }: CarouselProps) => {
     });
   }, []);
 
+
   return (
     <>
       <div className="carousel">
         <Slider {...carouselSettings}>
-          {matchCards.map((matchCard, idx) => (
-          <div key={idx}>
-            <Card {...matchCard} />
-          </div>
-          ))}
+          {sportData?.map((sport) =>
+            sport.realcategories.map((league) =>
+              league.tournaments.map((tournament) =>
+                tournament.matches.map((match, idx) => {
+                  if (matchCounter < (max || 10)) {
+                    matchCounter++;
+                    return (
+                      <Card
+                        key={idx}
+                        matchData={match}
+                        tournamentName={tournament.name}
+                        tournamentSeason={tournament.seasontypename}
+                        leagueName={league.name}
+                      />
+                    );
+                  } else {
+                    return null;
+                  }
+                }),
+              ),
+            ),
+          )}
         </Slider>
       </div>
     </>
